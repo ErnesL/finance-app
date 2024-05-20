@@ -4,11 +4,11 @@ import { DateTime } from "luxon";
 const router = express.Router();
 
 router.get("/", (_req, res) => {
-  res.send(`[${DateTime.now().toISO()}] --- Fetching dashboard...`);
+  res.send(`[${DateTime.now().toISO()}] --- Fetching current balance...`);
 });
 
 router.post("/", (_req, res) => {
-  res.send("Saving dashboard...");
+  res.send(`[${DateTime.now().toISO()}] --- Saving current balance...`);
 });
 
 export default router;

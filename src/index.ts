@@ -1,7 +1,8 @@
 import express from "express"; // ESModules
 import { DateTime } from "luxon";
 import { prisma } from "../prisma/config/prisma";
-import dashRouter from "./routes/dashboard";
+import balanceRouter from "./routes/balance";
+import userRouter from "./routes/user";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -27,7 +28,8 @@ app.post("/api/user", async (req, res) => {
   console.log(`User created at: ${DateTime.now().toISO()}`);
 });
 
-app.use("/api/dashboard", dashRouter);
+app.use("/api/balance", balanceRouter);
+app.use("/api/user", userRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
